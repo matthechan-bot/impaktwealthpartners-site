@@ -244,6 +244,11 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
 .consult p{margin-bottom:1.4rem}
 
 /* FOOTER */
+.kmark{display:inline-block;width:.4em;height:.6em;color:var(--color-accent);vertical-align:-.02em;margin:0 .01em}
+.kmark svg{width:100%;height:100%;display:block}
+.kmark path{stroke:currentColor}
+.srk{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.footer .logo{color:var(--on-dark)}.footer .logo__t{color:var(--on-dark-soft)}
 .footer{background:var(--color-primary);color:var(--on-dark);padding-block:2.8rem 2rem;border-top:1px solid var(--line-dark)}
 .footer__top{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:space-between;align-items:center;padding-bottom:1.8rem;border-bottom:1px solid var(--line-dark)}
 .footer__nav{display:flex;flex-wrap:wrap;gap:1.2rem}
@@ -544,7 +549,7 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
         var open=t.getAttribute('aria-expanded')==='true';
         tags.forEach(function(x){x.setAttribute('aria-expanded','false');});
         if(open||!panel){panel.hidden=true;panel.textContent='';}
-        else{t.setAttribute('aria-expanded','true');panel.textContent=t.getAttribute('data-body');panel.hidden=false;}
+        else{t.setAttribute('aria-expanded','true');panel.textContent=t.getAttribute('data-body');try{brandImpakt(panel);}catch(e){}panel.hidden=false;}
       });
     });
   });
@@ -564,6 +569,9 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
   form.addEventListener('click',function(e){var opt=e.target.closest('.opt');if(!opt)return;ans[opt.dataset.key]=opt.dataset.val;if(step<steps.length-1){show(step+1);}else{finish();}});
   back.addEventListener('click',function(){if(step>0)show(step-1);});
   document.getElementById('quizRestart').addEventListener('click',function(){ans={};form.style.display='';result.classList.remove('active');show(0);document.getElementById('plan').scrollIntoView({behavior:'smooth',block:'center'});});
+
+function brandImpakt(root){var HTML='Impa<span class="kmark" aria-hidden="true"><svg viewBox="0 0 40 60"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span><span class="srk">k</span>t';var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){if(!/Impa[kK]t/.test(n.nodeValue||''))return NodeFilter.FILTER_REJECT;var p=n.parentNode;if(!p)return NodeFilter.FILTER_REJECT;if(p.nodeName==='SCRIPT'||p.nodeName==='STYLE')return NodeFilter.FILTER_REJECT;if(p.classList&&(p.classList.contains('kmark')||p.classList.contains('logo__w')))return NodeFilter.FILTER_REJECT;return NodeFilter.FILTER_ACCEPT;}});var arr=[],n;while(n=w.nextNode())arr.push(n);arr.forEach(function(t){var s=document.createElement('span');s.innerHTML=t.nodeValue.replace(/Impa[kK]t/g,HTML);t.parentNode.replaceChild(s,t);});}
+try{brandImpakt(document.body);}catch(e){}
 })();
 </script>
 </body>

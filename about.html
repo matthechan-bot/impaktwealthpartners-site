@@ -227,6 +227,11 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
 .consult p{margin-bottom:1.4rem}
 
 /* FOOTER */
+.kmark{display:inline-block;width:.4em;height:.6em;color:var(--color-accent);vertical-align:-.02em;margin:0 .01em}
+.kmark svg{width:100%;height:100%;display:block}
+.kmark path{stroke:currentColor}
+.srk{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.footer .logo{color:var(--on-dark)}.footer .logo__t{color:var(--on-dark-soft)}
 .footer{background:var(--color-primary);color:var(--on-dark);padding-block:2.8rem 2rem;border-top:1px solid var(--line-dark)}
 .footer__top{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:space-between;align-items:center;padding-bottom:1.8rem;border-bottom:1px solid var(--line-dark)}
 .footer__nav{display:flex;flex-wrap:wrap;gap:1.2rem}
@@ -290,6 +295,9 @@ toggle.addEventListener('click',function(){var o=links.classList.toggle('open');
 links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');toggle.setAttribute('aria-expanded','false');}});
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.14,rootMargin:"0px 0px -8% 0px"});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+function brandImpakt(root){var HTML='Impa<span class="kmark" aria-hidden="true"><svg viewBox="0 0 40 60"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span><span class="srk">k</span>t';var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){if(!/Impa[kK]t/.test(n.nodeValue||''))return NodeFilter.FILTER_REJECT;var p=n.parentNode;if(!p)return NodeFilter.FILTER_REJECT;if(p.nodeName==='SCRIPT'||p.nodeName==='STYLE')return NodeFilter.FILTER_REJECT;if(p.classList&&(p.classList.contains('kmark')||p.classList.contains('logo__w')))return NodeFilter.FILTER_REJECT;return NodeFilter.FILTER_ACCEPT;}});var arr=[],n;while(n=w.nextNode())arr.push(n);arr.forEach(function(t){var s=document.createElement('span');s.innerHTML=t.nodeValue.replace(/Impa[kK]t/g,HTML);t.parentNode.replaceChild(s,t);});}
+try{brandImpakt(document.body);}catch(e){}
 })();
 </script>
 </body>
