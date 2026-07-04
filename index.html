@@ -126,9 +126,9 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
 .btn--lg{padding:1rem 1.85rem;font-size:1.05rem}
 
 /* HERO */
-.hero{padding-block:clamp(2.5rem,6vw,5rem) clamp(3rem,7vw,6rem)}
-.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
-@media(max-width:900px){.hero__grid{grid-template-columns:1fr;gap:2.2rem}}
+.hero{padding-block:clamp(1.5rem,3vw,3rem) clamp(2rem,4vw,3.5rem)}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:stretch}
+@media(max-width:900px){.hero__grid{grid-template-columns:1fr;gap:2.2rem;align-items:start}.hero__media{height:auto}.hero__media img{aspect-ratio:4/3;height:auto}}
 .hero h1{font-size:var(--fs-hero);margin:.7rem 0 1.2rem}
 .hero__key{display:inline-block;width:.56em;height:.7em;color:var(--color-accent);vertical-align:-.02em}
 .hero__key svg{width:100%;height:100%}
@@ -136,8 +136,8 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
 .hero__cta{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:1.9rem}
 .hero__meta{margin-top:1.9rem;display:flex;gap:1.6rem;flex-wrap:wrap;align-items:center;color:var(--ink-soft);font-size:.9rem}
 .hero__meta b{font-family:var(--f-display);font-weight:400;color:var(--ink);font-size:1.15rem;letter-spacing:.02em;margin-right:.35rem}
-.hero__media{position:relative}
-.hero__media img{width:100%;border-radius:var(--r);aspect-ratio:4/4.4;object-fit:cover;object-position:50% 30%}
+.hero__media{position:relative;height:100%}
+.hero__media img{width:100%;height:100%;border-radius:var(--r);object-fit:cover;object-position:50% 30%}
 .hero__chip{position:absolute;left:-14px;bottom:26px;background:var(--color-accent);color:var(--color-primary);padding:.75rem 1rem;border-radius:14px;font-weight:700;line-height:1.1;box-shadow:0 18px 40px color-mix(in srgb,var(--color-primary) 22%,transparent)}
 .hero__chip span{font-family:var(--f-display);font-size:1.55rem;display:block;letter-spacing:.02em}
 .hero__chip small{font-weight:600;font-size:.72rem}
@@ -280,7 +280,7 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
     <nav class="nav__links" id="navlinks" aria-label="Primary">
       <a href="#what">What we do</a>
       <a href="#approach">Approach</a>
-      <a href="#founder">About Abidha</a>
+      <a href="about.html">About us</a>
       <a href="#plan">Your plan</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -298,13 +298,13 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
 <section class="hero section wrap" aria-labelledby="h1">
   <div class="hero__grid">
     <div>
-      <span class="eyebrow reveal"><span class="chev"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span> Kampala · Wealth Partners</span>
+      <span class="eyebrow reveal"><span class="chev"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span> Impakt Wealth Partners</span>
       <h1 id="h1" class="reveal">Build, protect and grow what <span class="gold">matters</span><span class="hero__key"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span></h1>
-      <p class="hero__sub reveal">Wealth management in Kampala for people who want their money working with intention — planned with you, in plain language, no jargon. Whether you are starting out or protecting a lifetime's work, we build the plan around you.</p>
+      <p class="hero__sub reveal">Wealth management for people who want their money working with intention — built from our home in Kampala, and trusted by clients across East Africa and beyond — planned with you, in plain language, no jargon. Whether you are starting out or protecting a lifetime's work, we build the plan around you.</p>
       <div class="hero__cta reveal">
         <a class="btn btn--gold btn--lg" href="#plan">Design your wealth plan
           <svg viewBox="0 0 40 60" fill="none" aria-hidden="true"><path d="M28 10 L14 30 L28 50" stroke="currentColor" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter" transform="rotate(180 20 30)"/></svg></a>
-        <a class="btn btn--ghost btn--lg" href="https://wa.me/256700877000?text=Hi%20Impakt%20Wealth%20%F0%9F%91%8B%20I%20found%20you%20through%20your%20website%20and%20would%20like%20to%20learn%20more%20about%20planning%20my%20finances.%20Can%20we%20talk%3F" target="_blank" rel="noopener">Talk to Abidha</a>
+        <a class="btn btn--ghost btn--lg" href="https://wa.me/256700877000?text=Hi%20Impakt%20Wealth%20%F0%9F%91%8B%20I%20found%20you%20through%20your%20website%20and%20would%20like%20to%20learn%20more%20about%20planning%20my%20finances.%20Can%20we%20talk%3F" target="_blank" rel="noopener">Talk to one of us</a>
       </div>
       <div class="hero__meta reveal">
         <span><b>Top 1%</b>MDRT worldwide</span>
@@ -341,7 +341,7 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
         <img src="/welcome.jpg" alt="A Ugandan family at home — the people Impakt Wealth plans for and with" width="760" height="1140">
       </div>
       <div class="approach__blocks">
-        <div><span class="eyebrow"><span class="chev"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span> For women</span><p>Too often money decisions get made around women instead of with them. Abidha plans alongside you — clear choices, no jargon, a plan you understand and hold yourself.</p></div>
+        <div><span class="eyebrow"><span class="chev"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span> For women</span><p>Too often money decisions get made around women instead of with them. We plan alongside you — clear choices, no jargon, a plan you understand and hold yourself.</p></div>
         <div><span class="eyebrow"><span class="chev"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span> For families</span><p>One illness or accident shouldn't undo years of work. We put protection and a savings plan in place so your family stays steady when life doesn't.</p></div>
         <div><span class="eyebrow"><span class="chev"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span> For young people</span><p>Starting early is the biggest advantage you have. We help you build good habits and your first real plan — in language that respects your time.</p></div>
         <p style="color:var(--color-muted);font-size:.95rem">And the tide is turning: in 2025 more Ugandans chose life cover than ever, with those premiums up 39% in a single year, and insurers paid nearly one trillion shillings back to families and businesses (IRA, 2025). You would be in good, growing company.</p>
@@ -385,7 +385,7 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
         <div class="row__body">
           <h3>Empower</h3>
           <p>Understand your own money. Through financial-literacy training, mentorship and leadership coaching, we make sure you can carry the strategy yourself — not stay dependent on anyone.</p>
-          <div class="tags"><button type="button" class="tag" data-body="The strongest protection is understanding your own money. We teach in plain language so you can decide with confidence, not depend on anyone. Low awareness is one of the main reasons cover and savings stay out of reach across the region (IRA, 2025); we start by changing that for you." aria-expanded="false">Financial literacy</button><button type="button" class="tag" data-body="Good money habits are learned, not inherited. Abidha mentors clients and advisors alike, so knowledge is passed on and multiplied. She leads a team of more than 200 advisors and has reached over 3,000 people through literacy programs, and that same guidance is open to you." aria-expanded="false">Mentorship</button><button type="button" class="tag" data-body="Money decisions too often leave women and young people out. We put them at the centre, with plans they own and understand. As of 2024 only 37 percent of women in Sub-Saharan Africa held a financial account, against 48 percent of men, and women receive just 3 percent of Africa's start-up funding (World Bank); closing that gap is the point of this work." aria-expanded="false">Women &amp; youth</button></div>
+          <div class="tags"><button type="button" class="tag" data-body="The strongest protection is understanding your own money. We teach in plain language so you can decide with confidence, not depend on anyone. Low awareness is one of the main reasons cover and savings stay out of reach across the region (IRA, 2025); we start by changing that for you." aria-expanded="false">Financial literacy</button><button type="button" class="tag" data-body="Good money habits are learned, not inherited. Impakt mentors clients and advisors alike, so knowledge is passed on and multiplied. Our team of more than 200 advisors has reached over 3,000 people through literacy programs, and that same guidance is open to you." aria-expanded="false">Mentorship</button><button type="button" class="tag" data-body="Money decisions too often leave women and young people out. We put them at the centre, with plans they own and understand. As of 2024 only 37 percent of women in Sub-Saharan Africa held a financial account, against 48 percent of men, and women receive just 3 percent of Africa's start-up funding (World Bank); closing that gap is the point of this work." aria-expanded="false">Women &amp; youth</button></div>
           <div class="tag-panel" hidden aria-live="polite"></div>
           <a class="textlink" href="https://wa.me/256700877000?text=Hi%20Impakt%20Wealth%20%F0%9F%91%8B%20I%20want%20to%20understand%20money%20better%20and%20lead%20my%20own%20plan." target="_blank" rel="noopener">Talk about learning <span class="chev"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M28 10 L14 30 L28 50" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter" transform="rotate(180 20 30)"/></svg></span></a>
         </div>
@@ -454,11 +454,11 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
     <div class="reveal">
       <span class="eyebrow"><span class="chev"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span> The ImpaKt Index</span>
       <h2 style="margin:.6rem 0 1rem;max-width:16ch">Money guidance you can actually use</h2>
-      <p class="lead" style="color:var(--color-muted);max-width:52ch">Short, honest notes on planning, protecting and growing your money in Uganda — no jargon, no old-boys'-club finance talk. Follow the channel and get each one as it drops.</p>
+      <p class="lead" style="color:var(--color-muted);max-width:52ch">Short, honest notes on planning, protecting and growing your money across East Africa and beyond — no jargon, no old-boys'-club finance talk. Follow the channel and get each one as it drops.</p>
     </div>
     <div class="channel__card reveal">
       <h3>Follow on WhatsApp</h3>
-      <p>Be first to get the ImpaKt Index. Tap below and Abidha will send you the channel link the moment it goes live.</p>
+      <p>Be first to get the ImpaKt Index. Tap below and We'll send you the channel link the moment it goes live.</p>
       <a class="btn btn--dark" href="https://wa.me/256700877000?text=Hi%20Impakt%20Wealth%20%F0%9F%91%8B%20I%20would%20like%20to%20follow%20your%20ImpaKt%20Index%20Channel.%20Could%20you%20send%20me%20the%20link%3F" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.4-5.1-4.6-.2-.2-1.3-1.7-1.3-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.8-.4h.6c.2 0 .5-.1.7.5.3.7.9 2.2 1 2.3.1.2.1.3 0 .5s-.2.4-.3.5l-.4.5c-.2.2-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.4.1.1.1.7-.1 1.2Z"/></svg>
         Follow the Index</a>
@@ -501,29 +501,7 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
 </section>
 
 <!-- FOUNDER (authority band) -->
-<section class="section on-dark" id="founder">
-  <div class="wrap founder">
-    <div class="founder__photo reveal">
-      <img src="/abidha.jpg" alt="Abidha Din, founder of Impakt Wealth Partners" width="659" height="487">
-      <div class="founder__badge"><span>MDRT</span>Top 1% · Uganda's MDRT pioneer</div>
-    </div>
-    <div class="reveal">
-      <span class="eyebrow"><span class="chev"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span> The partner behind Impakt</span>
-      <h2 style="margin:.6rem 0 0">Abidha Din</h2>
-      <blockquote>“I help people meet their financial needs and <span class="gold">protect what matters most</span> to them.”</blockquote>
-      <cite>— Abidha Din, Founder &amp; Lead Advisor</cite>
-      <p style="margin-top:1.3rem">Abidha is a financial-lifestyle protector and the team lead at Impakt — someone who has sat with more than 600 individuals, families and business owners across Uganda and walked their money story with them, not at them. She built a way of working she calls FWY 360: a full-circle approach that starts where you are and plans around your real life, designed to put women, families and young people in charge of their own money. It earned her an IRA Innovation Award — and, more to the point, the trust of the people she plans for.</p>
-      <ul class="creds">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Six-time MDRT qualifier — the top 1% of advisors globally</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Certified Bank of Uganda financial-literacy trainer</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>IRA Innovation Awards — 360 Holistic Approach &amp; DDM Solution</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Leads 200+ advisors; programs reaching 3,000+ members</li>
-      </ul>
-      <a class="btn btn--ghost" href="https://www.abidhadin.com/" target="_blank" rel="noopener">Read Abidha's full story
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-    </div>
-  </div>
-</section>
+
 </main>
 
 <footer class="footer">
@@ -534,7 +512,7 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
         <span class="logo__t">Wealth Partners</span>
       </a>
       <nav class="footer__nav" aria-label="Footer">
-        <a href="#what">What we do</a><a href="#plan">Your plan</a><a href="#founder">About Abidha</a><a href="#channel">Insights</a><a href="#contact">Contact</a><a href="https://www.abidhadin.com/" target="_blank" rel="noopener">abidhadin.com</a>
+        <a href="#what">What we do</a><a href="#plan">Your plan</a><a href="about.html">About us</a><a href="#channel">Insights</a><a href="#contact">Contact</a><a href="https://www.abidhadin.com/" target="_blank" rel="noopener">abidhadin.com</a>
       </nav>
     </div>
     <div class="footer__bot">
@@ -579,7 +557,7 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
     var titles={"starting out and building":"An Emerging Builder's plan","providing for a family":"A Family Protector's plan","established, protecting wealth":"A Wealth Protector's plan","running a business":"A Business Owner's plan"};
     var goalLine={"grow what I have":"grow what you have with a clear investment strategy","protect against the worst":"put protection in place so one bad year can't undo your progress","plan for retirement":"build toward a retirement you can actually picture","understand money better":"understand your money well enough to lead your own plan"};
     document.getElementById('rTitle').textContent=titles[ans.who]||"Your plan";
-    document.getElementById('rBody').textContent="Based on your answers, the right first step is to "+(goalLine[ans.goal]||"map out your priorities")+". Abidha will walk you through it personally — no cost, no pressure. Send your answers to her below and she'll take it from there.";
+    document.getElementById('rBody').textContent="Based on your answers, the right first step is to "+(goalLine[ans.goal]||"map out your priorities")+". We will walk you through it personally — no cost, no pressure. Send your answers below and we'll take it from there.";
     var msg="Hi Impakt Wealth 👋 I just finished the wealth-plan tool on your site. I'm "+(ans.who||"—")+", my priority is to "+(ans.goal||"—")+", and I'm starting from "+(ans.stage||"—")+". Can we talk about my next step?";
     document.getElementById('rWa').href=WA+encodeURIComponent(msg);
   }
