@@ -26,18 +26,18 @@
 <style>
 :root{
   --color-primary:#252525;
-  --color-surface:#ffffff;
-  --color-mist:#f5f5f5;
+  --color-surface:#141414;
+  --color-mist:#1a1a1a;
   --color-accent:#fcaf04;
   --color-accent-2:#fcc605;
-  --color-muted:#5b5b5b;
+  --color-muted:#9a948b;
 
-  --ink:var(--color-primary);
+  --ink:#f4f1ea;
   --ink-soft:var(--color-muted);
-  --on-dark:var(--color-surface);
-  --on-dark-soft:color-mix(in srgb,var(--color-surface) 66%,transparent);
-  --line:color-mix(in srgb,var(--color-primary) 12%,transparent);
-  --line-dark:color-mix(in srgb,var(--color-surface) 16%,transparent);
+  --on-dark:#f4f1ea;
+  --on-dark-soft:var(--color-muted);
+  --line:color-mix(in srgb,var(--ink) 10%,transparent);
+  --line-dark:color-mix(in srgb,var(--ink) 12%,transparent);
 
   --f-display:"Anton",sans-serif;
   --f-body:"Jost",sans-serif;
@@ -256,10 +256,35 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
   .nav__toggle svg{width:26px;height:26px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* ===== DARK - GOLD GLOSSY THEME ===== */
+body{background:
+  radial-gradient(115% 75% at 12% -8%, color-mix(in srgb,var(--color-accent) 11%,transparent), transparent 55%),
+  radial-gradient(80% 55% at 102% -4%, color-mix(in srgb,var(--color-accent) 6%,transparent), transparent 55%),
+  var(--color-surface)}
+.hero h1,.section h2,.founder blockquote{color:#ffffff}
+.hero h1 .gold,.founder blockquote .gold{color:var(--color-accent)}
+.nav{background:color-mix(in srgb,var(--color-surface) 74%,transparent)}
+.textlink{color:var(--ink)}.textlink:hover{color:var(--color-accent)}
+.btn--ghost:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.quiz__back:hover{color:var(--color-accent)}
+.on-dark,.trust,.footer{background:linear-gradient(180deg,var(--color-primary),color-mix(in srgb,var(--color-primary) 55%,var(--color-surface)))}
+.trust{border-block:1px solid var(--line)}
+.trust__in div span{text-shadow:0 0 22px color-mix(in srgb,var(--color-accent) 30%,transparent)}
+.quiz,.consult{background:linear-gradient(180deg,color-mix(in srgb,var(--color-primary) 92%,transparent),color-mix(in srgb,var(--color-mist) 85%,transparent));box-shadow:0 30px 70px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(6px)}
+.quiz{position:relative;overflow:hidden}
+.quiz::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(75% 55% at 92% -12%,color-mix(in srgb,var(--color-accent) 16%,transparent),transparent 60%);pointer-events:none}
+.quiz>*{position:relative}
+.tag-panel{background:rgba(255,255,255,.03)}
+.opt{background:rgba(255,255,255,.02)}
+.btn--gold{box-shadow:0 10px 30px color-mix(in srgb,var(--color-accent) 26%,transparent)}
+.btn--gold:hover{box-shadow:0 14px 40px color-mix(in srgb,var(--color-accent) 40%,transparent)}
+.wa-float{box-shadow:0 12px 34px color-mix(in srgb,var(--color-accent) 42%,transparent)}
+.hero__media img,.row__media,.founder__photo img,.approach__media img{box-shadow:0 24px 60px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.06)}
 </style>
 </head>
 <body id="top">
-<header class="nav"><div class="nav__in"><a class="logo" href="index.html" aria-label="Impakt Wealth Partners, home"><img src="/logo-dark.png" alt="" width="1500" height="736"></a><nav class="nav__links" id="navlinks" aria-label="Primary"><a href="index.html#what">What we do</a><a href="index.html#approach">Approach</a><a href="about.html">About us</a><a href="index.html#plan">Your plan</a><a href="index.html#contact">Contact</a></nav><a class="btn btn--gold" href="https://wa.me/256700877000?text=Hi%20Impakt%20Wealth%20%F0%9F%91%8B%20I%20found%20you%20through%20your%20website%20and%20would%20like%20to%20learn%20more%20about%20planning%20my%20finances.%20Can%20we%20talk%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.4-5.1-4.6-.2-.2-1.3-1.7-1.3-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.8-.4h.6c.2 0 .5-.1.7.5.3.7.9 2.2 1 2.3.1.2.1.3 0 .5s-.2.4-.3.5l-.4.5c-.2.2-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.4.1.1.1.7-.1 1.2Z"/></svg> Chat on WhatsApp</a><button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div></header>
+<header class="nav"><div class="nav__in"><a class="logo" href="index.html" aria-label="Impakt Wealth Partners, home"><img src="/logo-light.png" alt="" width="1500" height="736"></a><nav class="nav__links" id="navlinks" aria-label="Primary"><a href="index.html#what">What we do</a><a href="index.html#approach">Approach</a><a href="about.html">About us</a><a href="index.html#plan">Your plan</a><a href="index.html#contact">Contact</a></nav><a class="btn btn--gold" href="https://wa.me/256700877000?text=Hi%20Impakt%20Wealth%20%F0%9F%91%8B%20I%20found%20you%20through%20your%20website%20and%20would%20like%20to%20learn%20more%20about%20planning%20my%20finances.%20Can%20we%20talk%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.4-5.1-4.6-.2-.2-1.3-1.7-1.3-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.8-.4h.6c.2 0 .5-.1.7.5.3.7.9 2.2 1 2.3.1.2.1.3 0 .5s-.2.4-.3.5l-.4.5c-.2.2-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.4.1.1.1.7-.1 1.2Z"/></svg> Chat on WhatsApp</a><button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div></header>
 <main>
 <section class="section"><div class="wrap"><span class="eyebrow reveal"><span class="chev"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M30 8 L14 30 L30 52" fill="none" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/></svg></span> About us</span><h1 class="reveal" style="font-size:clamp(2.4rem,5vw,4rem);text-transform:uppercase;line-height:1;margin:.6rem 0 1.1rem;max-width:20ch">The people behind your plan</h1><p class="reveal lead" style="max-width:62ch;color:var(--color-muted)">Impa<img class="kmark" src="/k.png" alt="k">t Wealth Partners is a wealth-management firm built in Kampala and working with individuals, families and businesses across East Africa and beyond. We plan the way we would want our own money planned — in plain language, around your real life, with protection and growth held together in one clear strategy.</p></div></section><section class="section on-dark" id="founder">
   <div class="wrap founder">

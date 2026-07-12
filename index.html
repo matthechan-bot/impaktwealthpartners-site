@@ -43,18 +43,18 @@
 <style>
 :root{
   --color-primary:#252525;
-  --color-surface:#ffffff;
-  --color-mist:#f5f5f5;
+  --color-surface:#141414;
+  --color-mist:#1a1a1a;
   --color-accent:#fcaf04;
   --color-accent-2:#fcc605;
-  --color-muted:#5b5b5b;
+  --color-muted:#9a948b;
 
-  --ink:var(--color-primary);
+  --ink:#f4f1ea;
   --ink-soft:var(--color-muted);
-  --on-dark:var(--color-surface);
-  --on-dark-soft:color-mix(in srgb,var(--color-surface) 66%,transparent);
-  --line:color-mix(in srgb,var(--color-primary) 12%,transparent);
-  --line-dark:color-mix(in srgb,var(--color-surface) 16%,transparent);
+  --on-dark:#f4f1ea;
+  --on-dark-soft:var(--color-muted);
+  --line:color-mix(in srgb,var(--ink) 10%,transparent);
+  --line-dark:color-mix(in srgb,var(--ink) 12%,transparent);
 
   --f-display:"Anton",sans-serif;
   --f-body:"Jost",sans-serif;
@@ -273,13 +273,38 @@ h3{font-size:var(--fs-h3);letter-spacing:.02em}
   .nav__toggle svg{width:26px;height:26px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* ===== DARK - GOLD GLOSSY THEME ===== */
+body{background:
+  radial-gradient(115% 75% at 12% -8%, color-mix(in srgb,var(--color-accent) 11%,transparent), transparent 55%),
+  radial-gradient(80% 55% at 102% -4%, color-mix(in srgb,var(--color-accent) 6%,transparent), transparent 55%),
+  var(--color-surface)}
+.hero h1,.section h2,.founder blockquote{color:#ffffff}
+.hero h1 .gold,.founder blockquote .gold{color:var(--color-accent)}
+.nav{background:color-mix(in srgb,var(--color-surface) 74%,transparent)}
+.textlink{color:var(--ink)}.textlink:hover{color:var(--color-accent)}
+.btn--ghost:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.quiz__back:hover{color:var(--color-accent)}
+.on-dark,.trust,.footer{background:linear-gradient(180deg,var(--color-primary),color-mix(in srgb,var(--color-primary) 55%,var(--color-surface)))}
+.trust{border-block:1px solid var(--line)}
+.trust__in div span{text-shadow:0 0 22px color-mix(in srgb,var(--color-accent) 30%,transparent)}
+.quiz,.consult{background:linear-gradient(180deg,color-mix(in srgb,var(--color-primary) 92%,transparent),color-mix(in srgb,var(--color-mist) 85%,transparent));box-shadow:0 30px 70px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(6px)}
+.quiz{position:relative;overflow:hidden}
+.quiz::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(75% 55% at 92% -12%,color-mix(in srgb,var(--color-accent) 16%,transparent),transparent 60%);pointer-events:none}
+.quiz>*{position:relative}
+.tag-panel{background:rgba(255,255,255,.03)}
+.opt{background:rgba(255,255,255,.02)}
+.btn--gold{box-shadow:0 10px 30px color-mix(in srgb,var(--color-accent) 26%,transparent)}
+.btn--gold:hover{box-shadow:0 14px 40px color-mix(in srgb,var(--color-accent) 40%,transparent)}
+.wa-float{box-shadow:0 12px 34px color-mix(in srgb,var(--color-accent) 42%,transparent)}
+.hero__media img,.row__media,.founder__photo img,.approach__media img{box-shadow:0 24px 60px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.06)}
 </style>
 </head>
 <body id="top">
 
 <header class="nav">
   <div class="nav__in">
-    <a class="logo" href="#top" aria-label="Impakt Wealth Partners, home"><img src="/logo-dark.png" alt="" width="1500" height="736"></a>
+    <a class="logo" href="#top" aria-label="Impakt Wealth Partners, home"><img src="/logo-light.png" alt="" width="1500" height="736"></a>
     <nav class="nav__links" id="navlinks" aria-label="Primary">
       <a href="#what">What we do</a>
       <a href="#approach">Approach</a>
